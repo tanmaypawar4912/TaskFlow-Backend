@@ -1,0 +1,2 @@
+import { Router } from 'express'; import protect from '../middleware/authMiddleware'; import * as c from '../controllers/taskController';
+const r=Router(); r.use(protect); r.post('/',c.create); r.get('/',c.list); r.get('/:id',c.getOne); r.put('/:id',c.update); r.delete('/:id',c.remove); r.patch('/:id/complete',c.complete); r.patch('/:id/restore',c.restore); r.post('/:id/duplicate',c.duplicate); export default r;
