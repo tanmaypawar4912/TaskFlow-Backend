@@ -9,11 +9,8 @@ const PORT = Number(process.env.PORT) || 5000;
 const start = async (): Promise<void> => {
   try {
     await connectDatabase();
-
-    app.listen(PORT, () => {
-      console.log(
-        `🚀 TaskFlow API running on port ${PORT}`
-      );
+    app.listen(PORT, "0.0.0.0", () => {
+      console.log(`🚀 TaskFlow API running on port ${PORT}`);
       console.log(
         `🌐 http://localhost:${PORT}`
       );
